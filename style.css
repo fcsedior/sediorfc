@@ -612,4 +612,7 @@ button:active:before {
         width: 350px;
         margin-left: 100px;
     }
+    .background {
+        background-position: left;
+    }
 }
