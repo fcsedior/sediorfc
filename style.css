@@ -232,6 +232,12 @@ mark {
     font-weight: bold;
     font-size: 27.5px;
     color: #d2003c;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+}
+
+.titulo:hover {
+    color: #4d0818;
 }
 
 /* ESCALAÇÃO */
