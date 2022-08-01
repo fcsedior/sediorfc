@@ -326,7 +326,7 @@ mark {
     margin-left: 25px;
 }
 
-.grid-plantel:focus .div-plantel {
+.grid-plantel:hover .div-plantel {
     transform: rotateY(180deg);
 }
 
@@ -356,6 +356,8 @@ mark {
     min-height: 300px;
     margin-bottom: 50px;
     transform-style: preserve-3d;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.25;
     transition: transform 1s;
 }
 
