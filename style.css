@@ -356,8 +356,6 @@ mark {
     min-height: 300px;
     margin-bottom: 50px;
     transform-style: preserve-3d;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.25;
     transition: transform 1s;
 }
 
