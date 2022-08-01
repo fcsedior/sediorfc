@@ -848,11 +848,12 @@ button:active:before {
     .subtitle-historia {
         width: 365px;
     }
-
     .p-historia {
         width: 365px;
     }
-
+    .resultados {
+        width: 125%;
+    }
     .jogos-bg {
         width: 415px;
     }
@@ -860,7 +861,6 @@ button:active:before {
         width: 425px;
         margin-left: -32.5px;
     }
-
     .info-footer {
         display: inline;
         margin: auto;
