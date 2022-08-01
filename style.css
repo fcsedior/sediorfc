@@ -60,7 +60,7 @@ body {
 }
 
 .jogo {
-    box-shadow: 0 118px 76px rgba(15,28,54,0.17),0 49.2976px 31.751px rgba(15,28,54,0.122205),0 26.3568px 16.9756px rgba(15,28,54,0.101338),0 14.7754px 9.51638px rgba(15,28,54,0.085),0 7.84712px 5.05408px rgba(15,28,54,0.0686618),0 3.26536px 2.10311px rgba(15,28,54,0.0477948);
+    box-shadow: 0 118px 76px rgba(15, 28, 54, 0.17), 0 49.2976px 31.751px rgba(15, 28, 54, 0.122205), 0 26.3568px 16.9756px rgba(15, 28, 54, 0.101338), 0 14.7754px 9.51638px rgba(15, 28, 54, 0.085), 0 7.84712px 5.05408px rgba(15, 28, 54, 0.0686618), 0 3.26536px 2.10311px rgba(15, 28, 54, 0.0477948);
     background: white;
     border: 1px solid #71717157;
     border-radius: 10.5px;
@@ -75,7 +75,7 @@ body {
     margin-top: 15px;
     display: flex;
     align-items: center;
-    justify-content: space-around;    
+    justify-content: space-around;
 }
 
 .title {
@@ -166,7 +166,7 @@ body {
 mark {
     font-size: 18.25px;
     background: none;
-    color:#1c2a38;
+    color: #1c2a38;
 }
 
 /* MENU DE NAVEGAÇÃO */
@@ -198,7 +198,7 @@ mark {
 .nav-list {
     display: flex;
     list-style: none;
-}   
+}
 
 .nav-list li a {
     text-decoration: none;
@@ -246,7 +246,7 @@ mark {
     margin-top: 50px;
 }
 
-.grid > div {
+.grid>div {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -300,8 +300,8 @@ mark {
     background-repeat: no-repeat;
     width: 100%;
     height: 650px;
-    background-image: linear-gradient(70.62deg,#af0832bd 14.78%,#db0a42be 71.74%),
-    url(png_20220729_161851_0000.png); 
+    background-image: linear-gradient(70.62deg, #af0832bd 14.78%, #db0a42be 71.74%),
+        url(png_20220729_161851_0000.png);
     /* https://www.redbullsalzburg.at/akimages/rbsprod/getmedia/11260298-c7a6-472e-960a-54568d433bc2/_AS10548.jpg.webp?impolicy=crop&width=4406&height=1542&x=0&y=2993&imwidth=1440 */
 }
 
@@ -311,11 +311,13 @@ mark {
     background-repeat: no-repeat;
     width: 100%;
     height: 650px;
-    background-image: linear-gradient(148deg,rgba(255, 255, 255, 0.171) 15%,#636363),
-    url(png_20220729_161851_0000.png); 
+    background-image: linear-gradient(148deg, rgba(255, 255, 255, 0.171) 15%, #636363),
+        url(png_20220729_161851_0000.png);
 }
 
 .grid-plantel {
+    background: transparent;
+    perspective: 1000px;
     display: grid;
     grid-gap: 50px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -324,33 +326,57 @@ mark {
     margin-left: 25px;
 }
 
+.grid-plantel:focus .div-plantel {
+    transform: rotateY(180deg);
+}
+
+.frente,
+.atras {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.atras {
+    display: grid;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
 .div-plantel {
+    position: relative;
     max-width: 168px;
     background: #d2003c;
     cursor: pointer;
     padding: 25px;
-    box-shadow: 0 118px 76px rgba(15,28,54,0.17),0 49.2976px 31.751px rgba(15,28,54,0.122205),0 26.3568px 16.9756px rgba(15,28,54,0.101338),0 14.7754px 9.51638px rgba(15,28,54,0.085),0 7.84712px 5.05408px rgba(15,28,54,0.0686618),0 3.26536px 2.10311px rgba(15,28,54,0.0477948);
+    box-shadow: 0 118px 76px rgba(15, 28, 54, 0.17), 0 49.2976px 31.751px rgba(15, 28, 54, 0.122205), 0 26.3568px 16.9756px rgba(15, 28, 54, 0.101338), 0 14.7754px 9.51638px rgba(15, 28, 54, 0.085), 0 7.84712px 5.05408px rgba(15, 28, 54, 0.0686618), 0 3.26536px 2.10311px rgba(15, 28, 54, 0.0477948);
     border-radius: 15px;
     min-height: 300px;
     margin-bottom: 50px;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.25s;
+    transform-style: preserve-3d;
+    transition: transform 1s;
 }
 
 .div-plantel:hover {
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.25s;
     box-shadow: none;
     background: #c20939;
 }
 
 .cargo {
     color: #1c2a38;
-    width: 120px; /* QUEBRA DE LINHA MEXER AQUI*/
+    width: 120px;
+    /* QUEBRA DE LINHA MEXER AQUI*/
     font-size: 20px;
     font-weight: bold;
 }
 
 .nome-cargo {
-    width: 120px; /* QUEBRA DE LINHA MEXER AQUI*/
+    width: 120px;
+    /* QUEBRA DE LINHA MEXER AQUI*/
     height: 65px;
     margin-bottom: 65px;
     font-size: 25px;
@@ -359,7 +385,8 @@ mark {
 }
 
 .nome-plantel {
-    width: 135px; /* QUEBRA DE LINHA MEXER AQUI, 120 QUEBRA*/
+    width: 135px;
+    /* QUEBRA DE LINHA MEXER AQUI, 120 QUEBRA*/
     height: 35px;
     margin-bottom: 85px;
     font-size: 25px;
@@ -416,7 +443,7 @@ mark {
     height: 738px;
     width: 734px;
     border-radius: 10px;
-    box-shadow: 0 30px 60px -40px rgba(0,0,0,0.25);
+    box-shadow: 0 30px 60px -40px rgba(0, 0, 0, 0.25);
 }
 
 .contatos {
@@ -428,7 +455,7 @@ mark {
     width: 750px;
     margin-bottom: 50px;
     padding: 15px;
-    box-shadow: 0 30px 60px -40px rgba(0,0,0,0.25);
+    box-shadow: 0 30px 60px -40px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     background: white;
 }
@@ -524,7 +551,7 @@ button {
     font-weight: 500;
     color: #d2003c;
 }
-   
+
 button:before {
     content: "";
     position: absolute;
@@ -534,22 +561,22 @@ button:before {
     width: 250px;
     border-radius: 50%;
 }
-   
+
 button:hover {
     color: #fff;
 }
-   
+
 button:before {
     top: 100%;
     left: 100%;
     transition: all .7s;
 }
-   
+
 button:hover:before {
     top: -30px;
     left: -30px;
 }
-   
+
 button:active:before {
     background: #d2003c;
     transition: background 0s;
@@ -599,13 +626,13 @@ button:active:before {
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: space-around;  
+    justify-content: space-around;
 }
 
 .footer-box {
     display: block;
     align-items: center;
-    justify-content: space-around;  
+    justify-content: space-around;
 }
 
 .footer-box a {
@@ -628,7 +655,7 @@ button:active:before {
 
 .links-footer {
     align-items: center;
-    justify-content: space-around;  
+    justify-content: space-around;
     display: block;
 }
 
@@ -695,12 +722,40 @@ button:active:before {
     background: #64081d;
 }
 
+/* INFORMAÇÕES ATRÁS */
+
+.nome-plantel-atras {
+    text-align: center;
+    width: 120px; /* QUEBRA DE LINHA MEXER AQUI, 120 QUEBRA*/
+    height: 25px;
+    margin-bottom: 65px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.info-atras {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacao-plantel-atras {
+    margin-top: -300px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    font-size: 22.5px;
+    color: white;
+}
+
+
 /* ANIMAÇÕES */
 
 @keyframes gradiente {
     from {
         background-position: 0 50%;
     }
+
     to {
         background-position: 100% 50%;
     }
@@ -712,97 +767,120 @@ button:active:before {
     .nav {
         width: 565px;
     }
+
     .grid-plantel {
         width: 500px;
         margin-left: -32.5px;
         grid-gap: 0px;
         grid-template-columns: 1fr 1fr;
     }
+
     .div-plantel {
         max-width: 168px;
         background: #d2003c;
         cursor: pointer;
         padding: 25px;
-        box-shadow: 0 118px 76px rgba(15,28,54,0.17),0 49.2976px 31.751px rgba(15,28,54,0.122205),0 26.3568px 16.9756px rgba(15,28,54,0.101338),0 14.7754px 9.51638px rgba(15,28,54,0.085),0 7.84712px 5.05408px rgba(15,28,54,0.0686618),0 3.26536px 2.10311px rgba(15,28,54,0.0477948);
+        box-shadow: 0 118px 76px rgba(15, 28, 54, 0.17), 0 49.2976px 31.751px rgba(15, 28, 54, 0.122205), 0 26.3568px 16.9756px rgba(15, 28, 54, 0.101338), 0 14.7754px 9.51638px rgba(15, 28, 54, 0.085), 0 7.84712px 5.05408px rgba(15, 28, 54, 0.0686618), 0 3.26536px 2.10311px rgba(15, 28, 54, 0.0477948);
         border-radius: 15px;
         min-height: 300px;
         margin-bottom: 50px;
     }
+
     .posicoes {
         margin-left: -32.5px;
     }
+
     .principal-plantel {
         margin-left: 0px;
         width: 465px;
         min-height: 92vh;
     }
+
     .background {
         width: 565px;
     }
+
     .historia {
         width: 565px;
     }
+
     .titulo-historia {
         width: 365px;
     }
+
     .subtitle-historia {
         width: 365px;
     }
+
     .p-historia {
         width: 365px;
     }
+
     .jogos-bg {
         width: 415px;
     }
+
     .jogo {
         width: 425px;
         margin-left: -32.5px;
     }
+
     .info-footer {
         display: inline;
         margin: auto;
         width: 450px;
     }
+
     .img-quadra {
         width: 565px;
         margin-bottom: 35px;
     }
+
     .contatos {
         margin-left: 15px;
         display: block;
     }
+
     .contato {
         margin: auto;
         width: 400px;
     }
+
     .maps {
         margin-top: 35px;
         display: grid;
         align-items: center;
         justify-content: center;
     }
+
     .iframe {
         width: 425px;
         height: 412px;
     }
+
     .section-inicial {
         width: 550px;
     }
+
     .squad {
         width: 350px;
         margin-left: 100px;
     }
+
     .footer {
         display: block;
         align-items: none;
         justify-content: none;
     }
+
     .footer-container {
         width: 565px;
     }
+
     .footer-baixo {
         width: 565px;
     }
+
     .footer-box {
         align-items: center;
     }
